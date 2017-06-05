@@ -1,6 +1,7 @@
 var express = require('express')
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser');
+var cors = require('cors')
 
 // *** config file *** //
 var db_config = {
@@ -9,6 +10,7 @@ var db_config = {
 }
 
 var app = express();
+app.use(cors())
 
 var current_env = app.settings.env //development, test, production
 mongoose.connect(db_config[current_env], function(err, res) {

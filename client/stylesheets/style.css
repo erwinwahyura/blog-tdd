@@ -1,0 +1,23 @@
+body {
+  /*background-image: url('/images/cloud2.png');*/
+  background: #fff url(../images/cloud2.png) repeat top left;
+  /*background-repeat: no-repeat;*/
+  /*background-repeat: repeat-x;*/
+  background-size: cover;
+/*background-size:cover; untuk membuat gambar full*/
+}
+.navbar navbar-default {
+  background-color: blue;
+}
+.container-fluid {
+  background-color: #fff;
+}
+.main-text {
+  color: white;
+  text-emphasis-style: circle;
+  margin-top: 40px;
+  width: 100%;
+	height: 100%;
+	position: relative;
+	/*text-align: center;*/
+}
