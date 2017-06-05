@@ -1,0 +1,27 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "implementation tdd before create some apps",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwinwahyura/tdd.git"
+  },
+  "author": "erwinwahyura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erwinwahyura/tdd/issues"
+  },
+  "homepage": "https://github.com/erwinwahyura/tdd#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^4.0.1",
+    "chai-http": "^3.0.0",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "mongoose": "^4.10.4"
+  }
+}
