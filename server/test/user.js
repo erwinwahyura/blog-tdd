@@ -6,6 +6,43 @@ var should = chai.should();
 var user = require('../models/user')
 var server = require('../app')
 
+//login cek
+// describe('LOGIN', function() {
+//   beforeEach(function(done) {
+//     var createUser= new user({
+//       name: "erwin",
+//       username: "erwin",
+//       password: "erwin"
+//     })
+//     createUser.save(() => {
+//       done()
+//     })
+//   })
+//
+//   afterEach(function(done) {
+//     user.remove({}, function(err) {
+//       done()
+//     })
+//   })
+//
+//   describe('GET, /users', function() {
+//     it('it should get all users ', function(done) {
+//       chai.request(server)
+//       .get('/api/signin')
+//       .end(function(err, res) {
+//         // res.body.should.be.a('array');
+//      		res.body.length.should.equal(0);
+//         res.should.have.status(200);
+//
+//         done()
+//       })
+//     })
+//   })
+// })
+
+
+//------------------------
+
 describe('GET /users', function() {
   beforeEach(function(done) {
     var createUser= new user({
@@ -30,7 +67,7 @@ describe('GET /users', function() {
       .get('/api/users')
       .end(function(err, res) {
         res.body.should.be.a('array');
-     		res.body.length.should.equal(0);
+     		res.body.length.should.equal(1);
         res.should.have.status(200);
 
         done()

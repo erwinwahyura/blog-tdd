@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn Dynamic Component</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      .fade-transition{
+        transition: opacity 2.5s ease;
+      }
+      .fade-enter, .fade-leave{
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li><a href="#" @click="currentView='home'">Home</a></li>
+        <li><a href="#" @click="currentView='sidebar'">sidebar</a></li>
+        <li><a href="#" @click="currentView='content'">article</a></li>
+      </ul>
+      <component :is="currentView" transition="fade" transition-mode="out-in" keep-alive></component>
+
+
+  <!-- template -->
+      <template id="home-template">
+        <h1>Welcome to blog</h1>
+      </template>
+
+      <template id="sidebar-template">
+
+      </template>
+
+        <template id="content-template">
+        <ul>
+          <li v-for="content in content">
+            {{ article }}
+          </li>
+        </ul>
+      </template>
+    </div>
+
+    <script type="text/javascript">
+
+    Vue.component('home', {
+      template: '#home-template '
+    })
+
+    Vue.component('sidebar', {
+      template: '#sidebar-template'
+    })
+
+    Vue.component('content', {
+      template: '#content-template',
+      datas: function() {
+        return {
+          content: [
+            'haloo ini adalah article',
+            'halo juga article tentang vue',
+          ]
+        }
+      }
+    })
+
+
+
+    new Vue({
+      el: '#app',
+      data: {
+        currentView: 'home'
+      }
+    })
+
+    </script>
+  </body>
+</html>
